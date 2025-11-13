@@ -6,7 +6,7 @@ def test(request):
     try:
         result = subprocess.run(["lpstat", "-p"], capture_output=True, text=True, check=True)
         output = result.stdout
-        if result.stdout:
+        if result.stdout == None:
             output = "Nenhuma impressora encontrada"
 
     except subprocess.CalledProcessError as e:
